@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Info</title>
+    <meta name="robots" content="noindex">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .filter-buttons button {
+            margin-right: 10px;
+        }
+        .social-item {
+            display: none;
+        }
+        .social-item.active {
+            display: block;
+        }
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1>Arun Vasudev N - Help Your Friend's Business</h1>
+            </div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <button class="btn btn-primary" onclick="filterContent('all')">All</button>
+                <button class="btn btn-outline-primary" onclick="filterContent('facebook')">Facebook</button>
+                <button class="btn btn-outline-primary" onclick="filterContent('twitter')">Twitter</button>
+                <button class="btn btn-outline-primary" onclick="filterContent('youtube')">YouTube</button>
+                <button class="btn btn-outline-primary" onclick="filterContent('google')">Google</button>
+                <button class="btn btn-outline-primary" onclick="filterContent('linkedin')">LinkedIn</button>
+            </div>
+        </div>
+
+        <!-- Social Media Content -->
+        <div id="social-media-list">
+            <!-- Facebook Section -->
+            <div class="social-item facebook mb-4">
+                <h4>Facebook Page Likes</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        Webapptiv 
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fwebapptiv%2F&width=450&layout&action&size&share=true&height=35&appId=764396978275269" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <li>
+                        iPhoneTopics 
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fiphonetopics&width=450&layout&action&size&share=true&height=35&appId=764396978275269" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li>
+                        Huge Astrology
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fhugeastrology%2F&width=450&layout&action&size&share=true&height=35&appId=764396978275269" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Twitter Section -->
+            <div class="social-item twitter mb-4">
+                <h4>Twitter</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        iPhoneTopics 
+                        <a href="https://twitter.com/iPhoneTopics_" class="twitter-follow-button" data-show-count="false">Follow @iPhoneTopics</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- YouTube Section -->
+            <div class="social-item youtube mb-4">
+                <h4>YouTube</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <script src="https://apis.google.com/js/platform.js"></script>
+
+                        <div class="g-ytsubscribe" data-channelid="UCPWBpYuQK6wusiJ1QR5bMXg" data-layout="full" data-count="default"></div>
+                    </li>
+                    <li>
+                        <script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="g-ytsubscribe" data-channelid="UCJCmOlw45kmFWJ6lwMPef3A" data-layout="full" data-count="default"></div>
+                    </li>
+                    <li>
+                        <script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="g-ytsubscribe" data-channelid="UCK-bqub2UeI5lOh82bdYbGg" data-layout="full" data-count="default"></div>
+                    </li>
+                    <li>
+                        <script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="g-ytsubscribe" data-channelid="UCpGWTt9Fi-_R-RLUyxGBUow" data-layout="full" data-count="default"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Google Business Section -->
+            <div class="social-item google mb-4">
+                <h4>Google Business Review</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        Webapptiv        
+                        <a href=" https://g.page/r/CXNByv1P2xGbEAE/review" target="_blank" class="btn btn-primary btn-sm">Give 5 or 4 Star Review</a>
+                    </li>
+                </ul>
+                <h4>Copy any paragraph and use it in Google Review</h4>
+                <div id="paragraphs"></div>
+              
+                <script>
+                const randomParagraphs = [
+  "Their Web Design, SEO services, and courses are top-notch. If you’re looking for these kinds of services near Chittur, you should definitely hire them!",
+  "Webappitv, based in Chittur, Kerala, offers excellent web development and educational solutions. Their team delivers high-quality services with great professionalism.",
+  "If you're in Chittur and want to learn web design or Python, Webappitv is the best choice! Their courses are well-structured and easy to understand, even for beginners. The instructors are friendly and supportive. Highly recommend!",
+  "Great web design services and SEO expertise. The courses are practical, and you can see real improvements after each lesson. Highly recommended!",
+  "Best place for web design and SEO services in Chittur. Their training sessions are really easy to follow and help you master key skills.",
+  "Webappitv is a professional and trustworthy company. The web development services are great, and the instructors in their courses are very knowledgeable.",
+  "If you're looking for web development or Python training near Chittur, this is your place. Their courses are simple, clear, and very effective.",
+  "I took a web design course here, and it was fantastic. The content was clear, and I learned a lot in a short time. Would recommend to anyone interested in web design!",
+  "Excellent team, great courses, and top-quality services! Webappitv is a go-to for anyone serious about web development or SEO in Chittur.",
+  "Great service and support. The SEO and web design courses are really helpful. I learned so much!",
+  "I highly recommend Webappitv for their SEO services! My website's ranking improved quickly, and they provided excellent advice and support throughout.",
+  "The web development services at Webappitv are outstanding. They handled my project with great attention to detail, and the final product exceeded my expectations.",
+  "I’ve taken several web design courses here, and I’m so glad I did. The instructors are knowledgeable and the lessons are fun and engaging.",
+  "Webappitv provides excellent educational resources for anyone looking to learn web development or SEO. I feel more confident with my skills now!",
+  "The team at Webappitv is very professional and knows their stuff. They helped me with both website design and SEO. Highly satisfied with their work!",
+  "If you need a great place to learn Python or web design, Webappitv is the best! The teachers are supportive, and the lessons are clear and practical.",
+  "Amazing web design services! The team is very responsive and provided me with exactly what I needed for my business website. Highly recommend!",
+  "I took the web design course at Webappitv, and it was very insightful. The practical exercises helped me understand everything better. Great for beginners!",
+  "Their SEO expertise is unmatched. Thanks to Webappitv, my website now appears on the first page of Google search results. I'm very pleased with their service!",
+  "Excellent courses and highly skilled instructors! I gained a lot of valuable knowledge from their Python and web design programs. Definitely worth it!",
+  "Webappitv provides excellent value for money. Their SEO services helped my business grow online, and their web design is both functional and visually appealing.",
+  "I’ve been using Webappitv’s services for several months now, and I’ve seen a huge difference in my website’s performance. Great results!",
+  "The team at Webappitv is fantastic. They helped me build a professional website for my business and also guided me through the SEO process. Very satisfied!",
+  "I love the hands-on approach to learning at Webappitv. The instructors make sure you understand every concept, and the lessons are always engaging.",
+  "If you're looking for a one-stop shop for web development and SEO, look no further than Webappitv! Their team knows exactly what they’re doing.",
+  "I highly recommend their Python course. The instructors are really knowledgeable, and the lessons are well-paced for beginners and advanced learners alike.",
+  "The web development course I took at Webappitv was fantastic. It covered all the important aspects of building a website, and I feel confident applying what I learned.",
+  "Good service. Very professional team.",
+  "Great classes! Learned so much about SEO and web design.",
+  "Amazing support! The team was always available to answer my questions.",
+  "The Python course was great. Very hands-on and practical.",
+  "Loved the web design course! The lessons were easy to follow and very informative.",
+  "Best SEO services in town! My website’s traffic increased significantly.",
+  "Quick and efficient service. My website looks great now!",
+  "Great experience with their web design team. Highly recommend.",
+  "Fantastic web development services. Very satisfied with the results!",
+  "Really impressed with their SEO services. My Google ranking improved fast.",
+  "Excellent course material. The instructors are very knowledgeable.",
+  "The Python course is a must-try. Great for both beginners and experts.",
+  "Super easy-to-follow web design tutorials. The course was very detailed.",
+  "Fantastic SEO service. Webappitv helped my site rank higher in no time.",
+  "Webappitv is a great choice for web development. The results speak for themselves.",
+  "The instructors at Webappitv are so friendly and supportive. Learned a lot!",
+  "Very impressed with the web design class. Highly practical and easy to understand.",
+  "Webappitv made web development so much easier for me. Great learning experience.",
+  "Good value for money. The courses are really informative and well-structured.",
+  "Their team does a great job with SEO. My website's traffic is up!",
+  "Great learning platform! The web design course was perfect for beginners.",
+  "Excellent services and a great team! I’ve learned so much from Webappitv.",
+  "The web design class was easy to follow and very practical. Learned everything I needed.",
+  "Highly recommend Webappitv for anyone looking to boost their SEO.",
+  "Loved the hands-on approach in their Python course. Definitely worth the investment.",
+  "Webappitv is the best for web development. My business website looks fantastic!",
+  "Their SEO service is excellent. My website has never been better.",
+  "Great classes and amazing support. Learned so much from their team.",
+  "Webappitv's web design services helped me build the perfect website for my business.",
+  "Highly skilled instructors. The web design course was perfect for me.",
+  "Very professional service. They helped me with SEO and web design. Satisfied customer!",
+  "Good service and very helpful courses. Would definitely recommend Webappitv."
+];
+
+              
+                  function getRandomParagraphs() {
+                    const numParagraphs = Math.floor(Math.random() * 2) + 2; // Either 2 or 3 paragraphs
+                    const selectedParagraphs = [];
+                    while (selectedParagraphs.length < numParagraphs) {
+                      const randomIndex = Math.floor(Math.random() * randomParagraphs.length);
+                      const paragraph = randomParagraphs[randomIndex];
+                      if (!selectedParagraphs.includes(paragraph)) {
+                        selectedParagraphs.push(paragraph);
+                      }
+                    }
+                    return selectedParagraphs;
+                  }
+              
+                  function createCopyButton(paragraphText) {
+                    const button = document.createElement('button');
+                    button.textContent = 'Copy';
+                    button.classList.add('copy-btn');
+                    button.onclick = () => copyToClipboard(paragraphText);
+                    return button;
+                  }
+              
+                  function copyToClipboard(text) {
+                    const tempTextArea = document.createElement('textarea');
+                    tempTextArea.value = text;
+                    document.body.appendChild(tempTextArea);
+                    tempTextArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempTextArea);
+                  }
+              
+                  function displayParagraphs() {
+                    const paragraphsContainer = document.getElementById('paragraphs');
+                    const paragraphs = getRandomParagraphs();
+              
+                    paragraphs.forEach(paragraph => {
+                      const paragraphContainer = document.createElement('div');
+                      paragraphContainer.classList.add('paragraph-container');
+                      
+                      const p = document.createElement('p');
+                      p.textContent = paragraph;
+                      paragraphContainer.appendChild(p);
+                      
+                      const copyButton = createCopyButton(paragraph);
+                      paragraphContainer.appendChild(copyButton);
+              
+                      paragraphsContainer.appendChild(paragraphContainer);
+                    });
+                  }
+              
+                  displayParagraphs();
+                </script>
+
+
+
+
+
+
+            </div>
+
+            <!-- LinkedIn Section -->
+            <div class="social-item linkedin mb-4">
+                <h4>LinkedIn</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        Arun Vasudev N (Profile) 
+                        <a href="https://www.linkedin.com/in/arunvasudev/" target="_blank" class="btn btn-primary btn-sm">Visit Profile & Clcik Connect button</a>
+                    </li>
+                    <li>
+                        Webapptiv (Company Page) 
+                  <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<script type="IN/FollowCompany" data-id="18822729" data-counter="bottom"></script>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Facebook SDK -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0"></script>
+    <!-- Twitter Widgets -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- Filter Function -->
+    <script>
+        function filterContent(filter) {
+            const items = document.querySelectorAll('.social-item');
+            const buttons = document.querySelectorAll('.btn');
+
+            // Update button styles
+            buttons.forEach(button => {
+                if (button.innerText.toLowerCase() === filter || (filter === 'all' && button.innerText === 'All')) {
+                    button.classList.remove('btn-outline-primary');
+                    button.classList.add('btn-primary');
+                } else {
+                    button.classList.remove('btn-primary');
+                    button.classList.add('btn-outline-primary');
+                }
+            });
+
+            // Show/hide content
+            items.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize to show all content
+        filterContent('all');
+    </script>
+</body>
+</html>
